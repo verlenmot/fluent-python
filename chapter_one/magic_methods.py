@@ -47,9 +47,13 @@ print(get_len[1::2])
 #     print(item)
 reversed(get_len)
 
+print("three" in get_len)
+
 for item in reversed(get_len):
     print(item)
 
 print(sorted(get_len))
 
 print(random.choice(get_len))
+
+print("Five" == get_len)
