@@ -18,3 +18,18 @@ print(example[2])
 print(example + 9)
 
 print(example * 2)
+
+class Reversion():
+    def __init__(self, value):
+        self.value = value
+
+    def __add__(self, other):
+        return self.value * other
+    
+    def __mul__(self, other):
+        return self.value + other
+    
+reverted_int = Reversion(5)
+
+print(reverted_int * 5)
+print(reverted_int + 5)
