@@ -58,7 +58,6 @@ class FilledCup(Cup):
         super().__init__(colour)
         self.liquid = liquid
 
-
 coffee = Coffee(150)
 cup = Cup("white")
 filled_cup = cup + coffee
