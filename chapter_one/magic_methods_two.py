@@ -37,8 +37,9 @@ print(reverted_int + 5)
 
 # Experiment
 class Cup():
-    def __init__(self, colour):
+    def __init__(self, colour, volume = 0):
         self.colour = colour
+        self.volume = volume
     
     # def __add__(self, other):
     #     if type(other) == Coffee:
@@ -47,18 +48,18 @@ class Cup():
     def __add__(self, other):
         if type(other) == Coffee:
             print(f"Pouring coffee into the {self.colour} cup!")
-            return FilledCup(self.colour, other)
+            return FilledCup(self.colour, self.volume + other.volume, other)
 
 class Coffee():
     def __init__(self, volume):
         self.volume = volume
 
 class FilledCup(Cup):
-    def __init__(self, colour, liquid):
-        super().__init__(colour)
+    def __init__(self, colour, volume, liquid):
+        super().__init__(colour, volume)
         self.liquid = liquid
 
 coffee = Coffee(150)
 cup = Cup("white")
 filled_cup = cup + coffee
-print(filled_cup.liquid.volume)
+print(filled_cup.volume)
